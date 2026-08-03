@@ -1,3 +1,5 @@
+![Qwenwitz Agent Logo Wide](Qwenwitz_Wide.png)
+
 # Qwenwitz Agent
 
 Qwenwitz is a local modding agent for Hearts of Iron IV. **Qwen 3.5 2B (`Qwen/Qwen3.5-2B`) is the recommended reasoning layer**: it reasons about prompts and repair requests, and its output is then parsed and grounded by a line of deterministic Python scripts. All decisions about identifiers, validation rules, and file edits are made by deterministic scripts, so the model can reason but never decide on its own. Nothing is written to your mod unless you review the diff and approve it.
@@ -111,3 +113,27 @@ this repo.
 - Everything runs locally. There is no telemetry, and the vanilla index is built from your local game install.
 - Nothing is written without review. Every change lands in a pending-diff review (Accept/Reject per file or batch) before touching your mod.
 - The vanilla tree is read-only. Mod files outside the configured workspace are never edited.
+
+## License
+
+MIT License
+
+Copyright (c) 2026 Qwenwitz Agent contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
