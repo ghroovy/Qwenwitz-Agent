@@ -6,6 +6,8 @@ Qwenwitz is a local modding agent for Hearts of Iron IV. **Qwen 3.5 2B (`Qwen/Qw
 
 **Qwenwitz is very early in development and is not recommended for serious modding usage at this current point of development.**
 
+Vibecoded with DeepSeek-V4-Flash-0731
+
 ## Requirements
 
 - Windows (tested on Windows 10)
@@ -50,7 +52,7 @@ hf download Qwen/Qwen3.5-2B
 
 ### Pointing the agent at your own mod
 
-The agent only ever edits `HOI4_WORKSPACE_PATH` — your mod folder. In VS Code:
+The agent only ever edits `HOI4_WORKSPACE_PATH`, your mod folder. In VS Code:
 
 1. Open this repository as the workspace folder and press **F5**
 2. Set `Qwenwitz Agent: Workspace Path` (settings → search `qwenwitz`) to your
