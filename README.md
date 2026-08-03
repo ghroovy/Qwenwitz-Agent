@@ -2,7 +2,7 @@
 
 Qwenwitz is a local modding agent for Hearts of Iron IV. **Qwen 3.5 2B (`Qwen/Qwen3.5-2B`) is the recommended reasoning layer**: it reasons about prompts and repair requests, and its output is then parsed and grounded by a line of deterministic Python scripts. All decisions about identifiers, validation rules, and file edits are made by deterministic scripts, so the model can reason but never decide on its own. Nothing is written to your mod unless you review the diff and approve it.
 
-Qwenwitz is very early in development and is not recommended for serious modding usage at this current point of development.
+**Qwenwitz is very early in development and is not recommended for serious modding usage at this current point of development.**
 
 ## Requirements
 
@@ -50,16 +50,15 @@ hf download Qwen/Qwen3.5-2B
 
 The agent only ever edits `HOI4_WORKSPACE_PATH` — your mod folder. In VS Code:
 
-1. Open this repository as the workspace folder and press **F5**, **or** install
-   the built VSIX (see [PUBLISHING.md](PUBLISHING.md)).
+1. Open this repository as the workspace folder and press **F5**
 2. Set `Qwenwitz Agent: Workspace Path` (settings → search `qwenwitz`) to your
    mod folder, e.g. `C:\Users\YOU\Documents\Paradox Interactive\Hearts of
    Iron IV\mod\MyMod`. This overrides the `.env` value for the extension.
 3. Use the **Qwenwitz Agent** activity-bar panel: chat, previews, repair,
-   merge, refactor — everything is staged as diffs and only applied after you
+   merge, refactor, everything is staged as diffs and only applied after you
    click Accept.
 
-The vanilla game files are read-only; your mod is the only writable root.
+The vanilla game files are read-only, your mod workspace is the only writable root.
 
 ### Reasoning model (recommended)
 
@@ -75,7 +74,7 @@ significantly. Pass `-SkipModel` to `setup.ps1` if you must, or set
 `HOI4_AGENT_USE_MODEL=0` in `.env`.
 
 **Other Qwen models are supported.** Any cached Qwen model that provides a
-chat template works — for example `Qwen/Qwen2.5-0.5B-Instruct` for a much
+chat template works, for example `Qwen/Qwen2.5-0.5B-Instruct` for a much
 smaller (~1 GB) footprint, or `Qwen/Qwen3.5-0.8B`. Set the model with
 `HOI4_AGENT_MODEL` in `.env`, or pass `-Model` to `setup.ps1`, then run
 `hf download <model>` once so it is cached locally:
