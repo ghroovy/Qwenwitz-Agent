@@ -2,7 +2,7 @@
 
 # Qwenwitz Agent
 
-Qwenwitz is a local modding agent for Hearts of Iron IV. **Qwen 3.5 2B (`Qwen/Qwen3.5-2B`) is the recommended reasoning layer**: it reasons about prompts and repair requests, and its output is then parsed and grounded by a line of deterministic Python scripts. All decisions about identifiers, validation rules, and file edits are made by deterministic scripts, so the model can reason but never decide on its own. Nothing is written to your mod unless you review the diff and approve it.
+Qwenwitz is a local modding agent for Hearts of Iron IV. **Qwen 3.5 2B (`Qwen/Qwen3.5-2B`) is the recommended reasoning layer**: it reasons about prompts and repair requests, and it's output is then parsed and grounded by a line of deterministic Python scripts. All decisions about identifiers, validation rules, and file edits are made by deterministic scripts, so the model can reason but never decide on it's own. Nothing is written to your mod unless you review the diff and approve it.
 
 **Qwenwitz is very early in development and is not recommended for serious modding usage at this current point of development.**
 
@@ -97,18 +97,6 @@ prebuilt `data/processed/index` from your own install.
 For the VS Code extension: open this repository as the workspace folder in
 VS Code, press **F5** (Extension Development Host), and use the **Qwenwitz
 Agent** chat panel. The extension starts the local agent server automatically.
-
-### Building a VSIX for distribution
-
-```powershell
-cd vscode-extension
-npx @vscode/vsce package
-```
-
-The extension is a companion to this repository: it launches
-`hoi4_agent/server.py` from the repo. A standalone marketplace package that
-bundles the engine is planned; until then, users install the extension from
-this repo.
 
 ## Privacy & safety
 
