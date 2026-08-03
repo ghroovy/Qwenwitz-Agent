@@ -20,6 +20,7 @@ data/projects/
 data/generated/
 benchmarks/
 /archive/
+devtools/
 
 API_REFERENCE.md
 ARCHITECTURE.md
