@@ -1,0 +1,11 @@
+# Qwenwitz Agent — core runtime
+numpy>=1.24
+Pillow>=9.0
+
+# Local Qwen reasoning layer (recommended; model-assisted repair/explain).
+torch>=2.0
+transformers>=4.57  # Qwen3.5 support; tested with 5.14.1
+huggingface_hub>=0.24  # for `hf download Qwen/Qwen3.5-2B`
+
+# Optional: performance tooling (devtools/)
+# psutil>=5.9

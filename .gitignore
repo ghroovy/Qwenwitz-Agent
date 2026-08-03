@@ -1,0 +1,30 @@
+# Private/copyrighted source material and derived corpora
+data/raw/
+data/processed/
+sources/raw/agentic-repo/.git/
+
+# Generated batches are versioned; raw + corpus are not.
+data/generated/*/sft_test.jsonl
+data/generated/*/agent_test.jsonl
+data/agent_state/
+
+.venv/
+__pycache__/
+*.pyc
+.env
+*.vsix
+
+# Local state / generated data (never publish)
+workspace/
+data/projects/
+data/generated/
+benchmarks/
+/archive/
+
+API_REFERENCE.md
+ARCHITECTURE.md
+CHANGELOG.md
+CONTRIBUTING.md
+MODERNIZATION_REPORT.md
+MODULES.md
+PUBLISHING.md

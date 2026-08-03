@@ -1,0 +1,138 @@
+{
+  "name": "qwenwitz-agent",
+  "displayName": "Qwenwitz Agent",
+  "description": "Qwenwitz: a local, deterministic-first Hearts of Iron IV modding agent. Create focus trees, events, decisions, countries; repair, merge and refactor mods with validated diffs and full previews.",
+  "version": "0.1.1",
+  "publisher": "qwenwitz",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qwenwitz/qwenwitz-agent.git"
+  },
+  "license": "MIT",
+  "icon": "icon.png",
+  "keywords": ["hoi4", "hearts of iron iv", "modding", "agent", "focus tree", "events", "decisions"],
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Programming Languages", "Other"],
+  "main": "./src/extension.js",
+  "files": [
+    "src/",
+    "media/",
+    "icon.png",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onView:hoi4Agent.sidePanel",
+    "onView:hoi4Agent.chat",
+    "onCommand:hoi4.createFeature",
+    "onCommand:hoi4.repairProject",
+    "onCommand:hoi4.explainError",
+    "onCommand:hoi4.mergeMods",
+    "onCommand:hoi4.refactorProject",
+    "onCommand:hoi4.validate",
+    "onCommand:hoi4.findVanillaExample",
+    "onCommand:hoi4.inspectIdentifier",
+    "onCommand:hoi4.searchDocumentation",
+    "onCommand:hoi4.previewMap",
+    "onCommand:hoi4.previewFocusTree",
+    "onCommand:hoi4.previewEvents",
+    "onCommand:hoi4.previewDecisions",
+    "onCommand:hoi4.previewFile",
+    "onCommand:hoi4.approvedChanges"
+  ],
+  "contributes": {
+    "configuration": {
+      "title": "Qwenwitz Agent",
+      "properties": {
+        "hoi4Agent.pythonPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to the project Python interpreter (default: <repo>/.venv/Scripts/python.exe)"
+        },
+        "hoi4Agent.autoStartServer": {
+          "type": "boolean",
+          "default": true,
+          "description": "Start the agent server automatically on activation"
+        },
+        "hoi4Agent.repoRoot": {
+          "type": "string",
+          "default": "",
+          "description": "Repository root containing hoi4_agent/server.py (default: first workspace folder)"
+        },
+        "hoi4Agent.workspacePath": {
+          "type": "string",
+          "default": "",
+          "description": "Your mod folder (the agent edits only this folder). Default: HOI4_WORKSPACE_PATH in <repo>/.env, or <repo>/workspace"
+        }
+      }
+    },
+    "commands": [
+      { "command": "hoi4.createFeature", "title": "Qwenwitz: Create Feature", "icon": "$(sparkle)" },
+      { "command": "hoi4.repairProject", "title": "Qwenwitz: Repair Project", "icon": "$(wrench)" },
+      { "command": "hoi4.explainError", "title": "Qwenwitz: Explain Error", "icon": "$(question)" },
+      { "command": "hoi4.mergeMods", "title": "Qwenwitz: Merge Mods", "icon": "$(git-merge)" },
+      { "command": "hoi4.refactorProject", "title": "Qwenwitz: Refactor Project", "icon": "$(symbol-method)" },
+      { "command": "hoi4.validate", "title": "Qwenwitz: Validate", "icon": "$(check-all)" },
+      { "command": "hoi4.findVanillaExample", "title": "Qwenwitz: Find Vanilla Example", "icon": "$(search)" },
+      { "command": "hoi4.inspectIdentifier", "title": "Qwenwitz: Inspect Identifier", "icon": "$(symbol-key)" },
+      { "command": "hoi4.searchDocumentation", "title": "Qwenwitz: Search Documentation", "icon": "$(book)" },
+      { "command": "hoi4.chat", "title": "Qwenwitz: Open Chat", "icon": "$(comment-discussion)" },
+      { "command": "hoi4.showDiff", "title": "Qwenwitz: Review Pending Diffs", "icon": "$(diff)" },
+      { "command": "hoi4.undo", "title": "Qwenwitz: Undo Last Apply", "icon": "$(discard)" },
+      { "command": "hoi4.previewMap", "title": "Qwenwitz: Preview Map", "icon": "$(globe)" },
+      { "command": "hoi4.previewFocusTree", "title": "Qwenwitz: Preview Focus Tree", "icon": "$(list-tree)" },
+      { "command": "hoi4.previewEvents", "title": "Qwenwitz: Preview Events", "icon": "$(list-ordered)" },
+      { "command": "hoi4.previewDecisions", "title": "Qwenwitz: Preview Decisions", "icon": "$(checklist)" },
+      { "command": "hoi4.previewFile", "title": "Qwenwitz: Preview File", "icon": "$(preview)" },
+      { "command": "hoi4.approvedChanges", "title": "Qwenwitz: Open Approved Changes", "icon": "$(history)" },
+      { "command": "hoi4.explainSelection", "title": "Qwenwitz: Explain Selection", "icon": "$(question)" },
+      { "command": "hoi4.repairSelection", "title": "Qwenwitz: Repair Selection", "icon": "$(wrench)" },
+      { "command": "hoi4.convertSelection", "title": "Qwenwitz: Convert Selection", "icon": "$(sync)" },
+      { "command": "hoi4.generateSelection", "title": "Qwenwitz: Generate Selection", "icon": "$(sparkle)" },
+      { "command": "hoi4.refactorSelection", "title": "Qwenwitz: Refactor Selection", "icon": "$(symbol-method)" }
+    ],
+    "menus": {
+      "editor/context": [
+        { "command": "hoi4.explainSelection", "title": "Qwenwitz: Explain", "group": "hoi4@1" },
+        { "command": "hoi4.repairSelection", "title": "Qwenwitz: Repair", "group": "hoi4@2" },
+        { "command": "hoi4.convertSelection", "title": "Qwenwitz: Convert", "group": "hoi4@3" },
+        { "command": "hoi4.generateSelection", "title": "Qwenwitz: Generate", "group": "hoi4@4" },
+        { "command": "hoi4.refactorSelection", "title": "Qwenwitz: Refactor", "group": "hoi4@5" },
+        { "command": "hoi4.previewFile", "title": "Qwenwitz: Preview", "group": "hoi4@6" }
+      ],
+      "commandPalette": [
+        { "command": "hoi4.createFeature" },
+        { "command": "hoi4.repairProject" },
+        { "command": "hoi4.explainError" },
+        { "command": "hoi4.mergeMods" },
+        { "command": "hoi4.refactorProject" },
+        { "command": "hoi4.validate" },
+        { "command": "hoi4.findVanillaExample" },
+        { "command": "hoi4.inspectIdentifier" },
+        { "command": "hoi4.searchDocumentation" },
+        { "command": "hoi4.chat" },
+        { "command": "hoi4.showDiff" },
+        { "command": "hoi4.undo" },
+        { "command": "hoi4.previewMap" },
+        { "command": "hoi4.previewFocusTree" },
+        { "command": "hoi4.previewEvents" },
+        { "command": "hoi4.previewDecisions" },
+        { "command": "hoi4.previewFile" },
+        { "command": "hoi4.approvedChanges" }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        { "id": "hoi4Agent", "title": "Qwenwitz Agent", "icon": "icon.png" }
+      ]
+    },
+    "views": {
+      "hoi4Agent": [
+        { "id": "hoi4Agent.sidePanel", "name": "Project", "type": "webview" },
+        { "id": "hoi4Agent.chat", "name": "Chat", "type": "webview" }
+      ]
+    }
+  }
+}
